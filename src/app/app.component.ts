@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './post';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'exo-blog';
+  title = 'Blog';
+
+  postsObjects = [
+    new Post('Mon Premier post',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      8),
+    new Post('Mon deuxième post',
+      'Nullam lacinia felis ut cursus dictum.',
+      -2),
+    new Post('Encore un post',
+      'Un texte passionnant.',
+      4),
+  ];
 }
