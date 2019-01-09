@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from './models/Post.model';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +9,15 @@ import { Post } from './models/Post.model';
 export class AppComponent {
   title = 'Blog';
 
-  postsObjects = [
-    new Post('Mon Premier post',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      8),
-    new Post('Mon deuxième post',
-      'Nullam lacinia felis ut cursus dictum.',
-      -2),
-    new Post('Encore un post',
-      'Un texte passionnant.',
-      4),
-  ];
+  constructor() {
+    const config = {
+      apiKey: 'AIzaSyC5OYheRZP-NeIY3svELzqR4gx_tgiFLok',
+      authDomain: 'oc-angular-tutoriel.firebaseapp.com',
+      databaseURL: 'https://oc-angular-tutoriel.firebaseio.com',
+      projectId: 'oc-angular-tutoriel',
+      storageBucket: 'oc-angular-tutoriel.appspot.com',
+      messagingSenderId: '863859483434'
+    };
+    firebase.initializeApp(config);
+  }
 }
